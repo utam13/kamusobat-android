@@ -11,8 +11,8 @@ $(document).ready(function () {
     // -----------------------------------------------------------------------------------------
     // Get JSON dari server
     // atur lokasi server
-    // const serverLoc = 'https://adewidya.com/webadmin/json/';
-    const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
+    const serverLoc = 'https://adewidya.com/webadmin/json/';
+    // const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
     // ---------------------------------------------------------------------------------------------
 
     // splash screen
