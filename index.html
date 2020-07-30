@@ -71,7 +71,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-10">
-                    <button class="menu-tombol btn btn-primary btn-block"><i class="fa fa-search"></i> CARI
+                    <button class="menu-tombol btn btn-primary btn-block" data-toggle="modal"
+                        data-target="#cari-obat"><i class="fa fa-search"></i> CARI
                         OBAT</button>
                 </div>
             </div>
@@ -135,7 +136,9 @@
                                     <h5 class="my-2 golongan"></h5>
                                 </div>
                                 <div class="col-3">
-                                    <a href="#" class="btn btn-link btn-close-detail-x pull-right">X</a>
+                                    <button type="button" class="my-1 close btn-close-detail-x" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -168,6 +171,45 @@
         </div>
     </section>
     <!-- end detail obat -->
+
+    <!-- modal cari obat-->
+    <div class="modal fade" id="cari-obat" tabindex="-1" role="dialog" aria-labelledby="cari-obat" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cari-formTitle">Pencarian Obat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="#" method="post" id="formulir-cari">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="koordinatcari">Koordinat</label>
+                            <input type="text" class="form-control form-control-sm" id="koordinatcari" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="namacari">Nama Tempat</label>
+                            <input type="text" class="form-control form-control-sm" id="namacari" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamatcari">Alamat</label>
+                            <input type="text" class="form-control form-control-sm" id="alamatcari" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsicari">Deskripsi</label>
+                            <textarea name="deskripsicari" id="deskripsicari" rows="5"
+                                class="form-control form-control-sm" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-dark btn-sm pull-right">Informasikan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end modal cari obat -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
