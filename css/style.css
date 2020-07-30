@@ -28,3 +28,8 @@ body {
 .menu-tombol-bermerek {
     font-size: 14pt;
 }
+
+.btn-close-detail-x {
+    font-weight: bold;
+    font-size: 12pt;
+}

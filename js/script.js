@@ -1,3 +1,10 @@
+// -----------------------------------------------------------------------------------------
+// Get JSON dari server
+// atur lokasi server
+// const serverLoc = 'https://adewidya.com/webadmin/json/';
+const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
+// ---------------------------------------------------------------------------------------------
+
 $(document).ajaxStart(function () {
     $(".loading").css("display", "block");
 });
@@ -8,13 +15,6 @@ $(document).ajaxComplete(function () {
 
 
 $(document).ready(function () {
-    // -----------------------------------------------------------------------------------------
-    // Get JSON dari server
-    // atur lokasi server
-    const serverLoc = 'https://adewidya.com/webadmin/json/';
-    // const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
-    // ---------------------------------------------------------------------------------------------
-
     // splash screen
     $('.splash-screen').delay(4000).fadeIn(1000, function () {
         $('.splash-screen').fadeOut(1000, function () {
@@ -72,7 +72,7 @@ $(document).ready(function () {
                     let kdkamus = response[i].kdkamus;
                     let nama = response[i].nama;
 
-                    $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action">' + nama + '</a>');
+                    $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action" onclick="detail(' + kdkamus + ')">' + nama + '</a>');
                 }
             }
         });
@@ -88,12 +88,20 @@ $(document).ready(function () {
 
         $('.list-obat').html('');
     });
+
+    $('.btn-close-detail, .btn-close-detail-x').click(function () {
+        $('.daftar').show();
+        $('.detail').hide();
+    });
     // end action button close
 });
 
 
 // action list group item
 function detail(kode) {
+    $('.daftar').hide();
+    $('.detail').show();
+
     console.log(kode);
 
     // parsing data detail obat
@@ -115,6 +123,14 @@ function detail(kode) {
                 let peringatan = response[i].peringatan;
                 let interaksi = response[i].interaksi;
 
+                $('.golongan').html(golongan);
+                $('.card-title').html(nama);
+                $('.kandungan').html(kandungan);
+                $('.merk').html(merk);
+                $('.dosis').html(dosis);
+                $('.efek').html(efek);
+                $('.peringatan').html(peringatan);
+                $('.interaksi').html(interaksi);
             }
         }
     });
