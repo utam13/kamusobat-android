@@ -30,7 +30,7 @@ $(document).ready(function () {
         $('.menu').hide();
         $('.daftar').show();
 
-        $('.list-obat').append('<li class="list-group-item list-group-item-info font-weight-bold">Daftar Obat Generik</li>');
+        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-info font-weight-bold">Daftar Obat Generik</a>');
 
         // parsing data obat generik
         $.ajax({
@@ -58,7 +58,7 @@ $(document).ready(function () {
         $('.menu').hide();
         $('.daftar').show();
 
-        $('.list-obat').append('<li class="list-group-item list-group-item-info font-weight-bold>Daftar Obat Bermerek</li>');
+        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-info font-weight-bold">Daftar Obat Bermerek</a>');
 
         // parsing data obat bermerek
         $.ajax({
@@ -102,6 +102,15 @@ function detail(kode) {
     $('.daftar').hide();
     $('.detail').show();
 
+    // kosongkan detail
+    $('.golongan').html("-");
+    $('.card-title').html("-");
+    $('.kandungan').html("-");
+    $('.merk').html("-");
+    $('.dosis').html("-");
+    $('.efek').html("-");
+    $('.peringatan').html("-");
+    $('.interaksi').html("-");
     console.log(kode);
 
     // parsing data detail obat
