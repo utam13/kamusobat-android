@@ -2,7 +2,7 @@ $(document).ready(function () {
     // -----------------------------------------------------------------------------------------
     // Get JSON dari server
     // atur lokasi server
-    const serverLoc = 'http://adewidya.com/webadmin/json/';
+    const serverLoc = 'https://adewidya.com/webadmin/json/';
     // ---------------------------------------------------------------------------------------------
 
     // splash screen
