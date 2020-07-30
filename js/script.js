@@ -11,8 +11,8 @@ $(document).ready(function () {
     // -----------------------------------------------------------------------------------------
     // Get JSON dari server
     // atur lokasi server
-    const serverLoc = 'https://adewidya.com/webadmin/json/';
-    // const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
+    // const serverLoc = 'https://adewidya.com/webadmin/json/';
+    const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
     // ---------------------------------------------------------------------------------------------
 
     // splash screen
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         // parsing data obat generik
         $.ajax({
-            url: serverLoc + 'jsonKamus/1',
+            url: serverLoc + 'jsonKamus/1/1',
             type: 'get',
             dataType: 'JSON',
             success: function (response) {
@@ -43,15 +43,8 @@ $(document).ready(function () {
                 for (let i = 0; i < len; i++) {
                     let kdkamus = response[i].kdkamus;
                     let nama = response[i].nama;
-                    // let kandungan = response[i].kandungan;
-                    // let merk = response[i].merk;
-                    // let golongan = response[i].golongan;
-                    // let dosis = response[i].dosis;
-                    // let efek = response[i].efek;
-                    // let peringatan = response[i].peringatan;
-                    // let interaksi = response[i].interaksi;
 
-                    $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action">' + nama + '</a>');
+                    $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action" onclick="detail(' + kdkamus + ')">' + nama + '</a>');
                 }
             }
         });
@@ -65,11 +58,11 @@ $(document).ready(function () {
         $('.menu').hide();
         $('.daftar').show();
 
-        $('.list-obat').append('<li class="list-group-item list-group-item-info font-weight-bold">Daftar Obat Bermerek</li>');
+        $('.list-obat').append('<li class="list-group-item list-group-item-info font-weight-bold>Daftar Obat Bermerek</li>');
 
         // parsing data obat bermerek
         $.ajax({
-            url: serverLoc + 'jsonKamus/2',
+            url: serverLoc + 'jsonKamus/1/2',
             type: 'get',
             dataType: 'JSON',
             success: function (response) {
@@ -97,3 +90,34 @@ $(document).ready(function () {
     });
     // end action button close
 });
+
+
+// action list group item
+function detail(kode) {
+    console.log(kode);
+
+    // parsing data detail obat
+    $.ajax({
+        url: serverLoc + 'jsonKamus/2/' + kode,
+        type: 'get',
+        dataType: 'JSON',
+        success: function (response) {
+            console.log(response);
+            let len = response.length;
+            for (let i = 0; i < len; i++) {
+                let kdkamus = response[i].kdkamus;
+                let nama = response[i].nama;
+                let kandungan = response[i].kandungan;
+                let merk = response[i].merk;
+                let golongan = response[i].golongan;
+                let dosis = response[i].dosis;
+                let efek = response[i].efek;
+                let peringatan = response[i].peringatan;
+                let interaksi = response[i].interaksi;
+
+            }
+        }
+    });
+    // end parsing data detail obat
+}
+// end action list group item
