@@ -60,13 +60,15 @@
             </div>
             <div class="row justify-content-center mt-3">
                 <div class="col-10">
-                    <button class="menu-tombol btn btn-primary btn-block"><i class="fa fa-flask"></i> DAFTAR OBAT
+                    <button class="menu-tombol-generik btn btn-primary btn-block"><i class="fa fa-flask"></i> DAFTAR
+                        OBAT
                         GENERIK</button>
                 </div>
             </div>
             <div class="row justify-content-center mt-3">
                 <div class="col-10">
-                    <button class="menu-tombol btn btn-primary btn-block"><i class="fa fa-flask"></i> DAFTAR OBAT
+                    <button class="menu-tombol-bermerek btn btn-primary btn-block"><i class="fa fa-flask"></i> DAFTAR
+                        OBAT
                         BERMEREK</button>
                 </div>
             </div>
@@ -85,6 +87,9 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn-close btn btn-primary fa fa-close"></button>
+                        </div>
                         <input type="text" class="form-control" autocomplete="off" id="cari" name="cari">
                         <div class="input-group-append">
                             <button class="btn btn-primary fa fa-search"></button>
@@ -92,19 +97,38 @@
                     </div>
                 </div>
                 <div class="col-12 mt-2">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-                        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1"
-                            aria-disabled="true">Vestibulum at eros</a>
+                    <div class="list-group list-group-flush list-obat">
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- end daftar obat -->
+
+    <!-- detail obat -->
+    <section class="detail mt-5 mb-3" id="detail">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn-close btn btn-primary fa fa-close"></button>
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary fa fa-search"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-2">
+                    <div class="list-group list-group-flush list-obat">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end detail obat -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

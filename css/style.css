@@ -21,6 +21,8 @@ body {
     width: 100%;
 }
 
-.menu-tombol {
+.menu-tombol,
+.menu-tombol-generik,
+.menu-tombol-bermerek {
     font-size: 14pt;
 }
