@@ -174,7 +174,7 @@
 
     <!-- modal cari obat-->
     <div class="modal fade" id="cari-obat" tabindex="-1" role="dialog" aria-labelledby="cari-obat" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="cari-formTitle">Pencarian Obat</h5>
@@ -182,17 +182,17 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="#" method="post" id="formulir-cari">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="koordinatcari">Koordinat</label>
-                            <input type="text" class="form-control form-control-sm" id="koordinatcari" required>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" id="cari-obat" name="cari-obat"
+                                placeholder="Ketikkan yang ingin Anda cari">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary fa fa-search"></button>
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-dark btn-sm pull-right">Informasikan</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
