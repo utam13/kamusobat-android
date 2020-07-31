@@ -1,8 +1,8 @@
 // -----------------------------------------------------------------------------------------
 // Get JSON dari server
 // atur lokasi server
-const serverLoc = 'https://adewidya.com/webadmin/json/';
-// const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
+// const serverLoc = 'https://adewidya.com/webadmin/json/';
+const serverLoc = 'http://localhost/kamusobat-webadmin/json/';
 // ---------------------------------------------------------------------------------------------
 
 $(document).ajaxStart(function () {
@@ -126,11 +126,16 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(response);
                 let len = response.length;
-                for (let i = 0; i < len; i++) {
-                    let kdkamus = response[i].kdkamus;
-                    let nama = response[i].nama;
+                if (len > 0) {
+                    for (let i = 0; i < len; i++) {
+                        let kdkamus = response[i].kdkamus;
+                        let nama = response[i].nama;
 
-                    $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action" onclick="detail(' + kdkamus + ')">' + nama + '</a>');
+                        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action" onclick="detail(' + kdkamus + ')">' + nama + '</a>');
+                    }
+                } else {
+                    alert('Data yang Anda cari "' + target + '" tidak ditemukan');
+                    $('.btn-close').click();
                 }
             }
         });
