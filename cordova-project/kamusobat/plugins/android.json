@@ -1,0 +1,18 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-exit": {
+      "PACKAGE_NAME": "com.adewidya.kamusobat"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.adewidya.kamusobat"
+    }
+  },
+  "dependent_plugins": {}
+}

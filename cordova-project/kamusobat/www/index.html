@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- font Awesome -->
+    <link href="font/css/font-awesome.min.css" rel="stylesheet">
+
+    <title>Kamus Obat</title>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary justify-content-center ">
+        <h4 class="text-white">Kamus Obat</h4>
+    </nav>
+
+    <!-- splash screen -->
+    <section id="splash-screen" class="splash-screen pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <img src="img/logo.png" alt="..." class="img-logo">
+                </div>
+                <div class="col-8 mt-4 pt-5 text-center">
+                    <h4>Version 1.0</h4>
+                    <h6>Ade Widya</h6>
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end splash screen -->
+
+    <!-- loading proses -->
+    <section class="loading position-fixed" id="loading">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end loading proses -->
+
+    <!-- logo -->
+    <section id="logo" class="logo">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <img src="img/logo.png" alt="..." class="img-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end logo -->
+
+    <!-- menu -->
+    <section class="menu mt-5" id="menu">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <button class="menu-tombol-cari btn btn-primary btn-block" data-toggle="modal"
+                        data-target="#cari-obat"><i class="fa fa-search"></i> CARI
+                        OBAT</button>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-10">
+                    <button class="menu-tombol-generik btn btn-primary btn-block"><i class="fa fa-flask"></i> DAFTAR
+                        OBAT
+                        GENERIK</button>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-10">
+                    <button class="menu-tombol-bermerek btn btn-primary btn-block"><i class="fa fa-flask"></i> DAFTAR
+                        OBAT
+                        BERMEREK</button>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-10">
+                    <button class="menu-tombol-keluar btn btn-primary btn-block"><i class="fa fa-sign-out"></i>
+                        KELUAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end menu -->
+
+    <!-- daftar obat -->
+    <section class="daftar mt-n4" id="daftar">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class=" col-12 mt-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="my-2 judul"></h5>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="my-2 close btn-close" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-list overflow-auto text-center">
+                            <div class="list-group list-group-flush list-obat">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- end daftar obat -->
+
+    <!-- detail obat -->
+    <section class="detail mt-n4" id="detail">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 mt-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="my-2 golongan"></h5>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="my-2 close btn-close-detail-x" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-list overflow-auto">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">
+                                <h6>Kandungan:</h6>
+                                <p class="kandungan"></p>
+                                <hr>
+                                <h6>Merk:</h6>
+                                <p class="merk"></p>
+                                <hr>
+                                <h6>Manfaat:</h6>
+                                <p class="manfaat"></p>
+                                <hr>
+                                <h6>Dosis:</h6>
+                                <p class="dosis"></p>
+                                <hr>
+                                <h6>Efek:</h6>
+                                <p class="efek"></p>
+                                <hr>
+                                <h6>Peringatan:</h6>
+                                <p class="peringatan"></p>
+                                <hr>
+                                <h6>Interaksi:</h6>
+                                <p class="interaksi"></p>
+                            </p>
+                            <a href="#" class="btn btn-primary fa fa-close btn-close-detail pull-right"> Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end detail obat -->
+
+    <!-- modal cari obat-->
+    <div class="modal fade" id="cari-obat" tabindex="-1" role="dialog" aria-labelledby="cari-obat" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cari-formTitle">Pencarian Obat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="info-modal font-italic">
+                        Proses pencarian akan dilakukan ke semua informasi berkaitan dengan obat yang ada di dalam
+                        database.
+                        Mohon ditunggu sampai proses selesai!
+                    </p>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" id="cari-all" name="cari-all"
+                                placeholder="Ketikkan yang ingin Anda cari">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary fa fa-search btn-search-all"
+                                    data-dismiss="modal"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal cari obat -->
+
+    <!-- Optional JavaScript -->
+    <!-- cordova index.js  -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
