@@ -85,6 +85,7 @@ $(document).ready(function () {
         $('.logo').show();
         $('.menu').show();
         $('.daftar').hide();
+        $('.loading').hide();
 
         $('.list-obat').html('');
     });
@@ -92,6 +93,7 @@ $(document).ready(function () {
     $('.btn-close-detail, .btn-close-detail-x').click(function () {
         $('.daftar').show();
         $('.detail').hide();
+        $('.loading').hide();
     });
     // end action button close
 
