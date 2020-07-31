@@ -13,7 +13,6 @@ $(document).ajaxComplete(function () {
     $(".loading").css("display", "none");
 });
 
-
 $(document).ready(function () {
     // splash screen
     $('.splash-screen').delay(4000).fadeIn(1000, function () {
