@@ -116,7 +116,7 @@ $(document).ready(function () {
 
         const target = $('#cari-all').val();
 
-        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-info font-weight-bold">Hasil Pencarian</a>');
+        $('.judul').html('Hasil Pencarian');
 
         // parsing data obat berdasarkan pencarian
         $.ajax({
