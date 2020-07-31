@@ -1,1 +1,0 @@
-aplikasi kamus obat di dalam framework cordova
