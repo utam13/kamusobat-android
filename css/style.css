@@ -24,12 +24,16 @@ body {
 }
 
 .menu-tombol,
+.menu-tombol-cari,
 .menu-tombol-generik,
 .menu-tombol-bermerek {
     font-size: 14pt;
 }
 
-.btn-close-detail-x {
-    /* font-weight: bold;
-    font-size: 12pt; */
+.info-modal {
+    font-size: 10pt;
+}
+
+.card-list {
+    max-height: 78vh;
 }

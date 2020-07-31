@@ -71,7 +71,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-10">
-                    <button class="menu-tombol btn btn-primary btn-block" data-toggle="modal"
+                    <button class="menu-tombol-cari btn btn-primary btn-block" data-toggle="modal"
                         data-target="#cari-obat"><i class="fa fa-search"></i> CARI
                         OBAT</button>
                 </div>
@@ -100,26 +100,33 @@
     <!-- end menu -->
 
     <!-- daftar obat -->
-    <section class="daftar mt-5 mb-3" id="daftar">
+    <section class="daftar mt-n4" id="daftar">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="btn-close btn btn-primary fa fa-close"></button>
+                <div class=" col-12 mt-2 text-center">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="my-2 judul"></h5>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="my-2 close btn-close" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <input type="text" class="form-control" autocomplete="off" id="cari" name="cari">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary fa fa-search"></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-2 text-center">
-                    <div class="list-group list-group-flush list-obat">
+                        <div class="card-body card-list overflow-auto">
+                            <div class="list-group list-group-flush list-obat">
 
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
     </section>
     <!-- end daftar obat -->
@@ -183,12 +190,19 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <p class="info-modal font-italic">
+                        Proses pencarian akan dilakukan ke semua informasi berkaitan dengan obat yang ada di dalam
+                        database.
+                        Mohon ditunggu sampai proses selesai!
+                    </p>
+
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" autocomplete="off" id="cari-obat" name="cari-obat"
+                            <input type="text" class="form-control" autocomplete="off" id="cari-all" name="cari-all"
                                 placeholder="Ketikkan yang ingin Anda cari">
                             <div class="input-group-append">
-                                <button class="btn btn-primary fa fa-search"></button>
+                                <button class="btn btn-primary fa fa-search btn-search-all"
+                                    data-dismiss="modal"></button>
                             </div>
                         </div>
                     </div>

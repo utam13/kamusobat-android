@@ -30,7 +30,7 @@ $(document).ready(function () {
         $('.menu').hide();
         $('.daftar').show();
 
-        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-info font-weight-bold">Daftar Obat Generik</a>');
+        $('.judul').html('Daftar Obat Generik');
 
         // parsing data obat generik
         $.ajax({
@@ -58,7 +58,7 @@ $(document).ready(function () {
         $('.menu').hide();
         $('.daftar').show();
 
-        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-info font-weight-bold">Daftar Obat Bermerek</a>');
+        $('.judul').html('Daftar Obat Bermerek');
 
         // parsing data obat bermerek
         $.ajax({
@@ -94,6 +94,48 @@ $(document).ready(function () {
         $('.detail').hide();
     });
     // end action button close
+
+    // kosongkan form cari
+    $('.menu-tombol-cari').click(function () {
+        $('#cari-all').val("");
+    });
+
+    $('#cari-obat').on('shown.bs.modal', function () {
+        $('#cari-all').focus();
+    })
+
+    // end action tombol cari
+
+    // pencarian semantik dengan boyer moore
+    $('.btn-search-all').click(function () {
+        $('.logo').hide();
+        $('.menu').hide();
+        $('.daftar').show();
+
+        const target = $('#cari-all').val();
+
+        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-info font-weight-bold">Hasil Pencarian</a>');
+
+        // parsing data obat berdasarkan pencarian
+        $.ajax({
+            url: serverLoc + 'jsonKamus/3/' + target,
+            type: 'get',
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                let len = response.length;
+                for (let i = 0; i < len; i++) {
+                    let kdkamus = response[i].kdkamus;
+                    let nama = response[i].nama;
+
+                    $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action" onclick="detail(' + kdkamus + ')">' + nama + '</a>');
+                }
+            }
+        });
+        // end parsing data obat berdasarkan pencarian
+
+    });
+    // end pencarian
 });
 
 
