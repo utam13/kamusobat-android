@@ -175,6 +175,7 @@ function detail(kode) {
                 let nama = response[i].nama;
                 let kandungan = response[i].kandungan;
                 let merk = response[i].merk;
+                let manfaat = response[i].manfaat;
                 let golongan = response[i].golongan;
                 let dosis = response[i].dosis;
                 let efek = response[i].efek;
@@ -185,6 +186,7 @@ function detail(kode) {
                 $('.card-title').html(nama);
                 $('.kandungan').html(kandungan);
                 $('.merk').html(merk);
+                $('.manfaat').html(manfaat);
                 $('.dosis').html(dosis);
                 $('.efek').html(efek);
                 $('.peringatan').html(peringatan);
