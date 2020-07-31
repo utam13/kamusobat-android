@@ -11,8 +11,17 @@
             {
               "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Exit\"><param name=\"android-package\" value=\"im.ckk.cordova.exit.Exit\" /></feature>",
+              "count": 1
             }
           ]
+        }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": []
         }
       }
     }
@@ -20,11 +29,24 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.adewidya.KamusObat"
+    },
+    "cordova-plugin-exit": {
+      "PACKAGE_NAME": "com.adewidya.KamusObat"
     }
   },
   "dependent_plugins": {},
-  "modules": [],
+  "modules": [
+    {
+      "id": "cordova-plugin-exit.exit",
+      "file": "plugins/cordova-plugin-exit/www/exit.js",
+      "pluginId": "cordova-plugin-exit",
+      "clobbers": [
+        "cordova.plugins.exit"
+      ]
+    }
+  ],
   "plugin_metadata": {
-    "cordova-plugin-whitelist": "1.3.4"
+    "cordova-plugin-whitelist": "1.3.4",
+    "cordova-plugin-exit": "1.0.3"
   }
 }
