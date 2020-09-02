@@ -109,37 +109,42 @@ $(document).ready(function () {
 
     // pencarian semantik dengan boyer moore
     $('.btn-search-all').click(function () {
-        $('.logo').hide();
-        $('.menu').hide();
-        $('.daftar').show();
-
         const target = $('#cari-all').val();
+        const lenTarget = target.length;
 
-        $('.judul').html('Hasil Pencarian');
+        if (target != "" || target != " " || lenTarget > 2) {
+            $('.logo').hide();
+            $('.menu').hide();
+            $('.daftar').show();
 
-        // parsing data obat berdasarkan pencarian
-        $.ajax({
-            url: serverLoc + 'jsonKamus/3/' + target,
-            type: 'get',
-            dataType: 'JSON',
-            success: function (response) {
-                console.log(response);
-                let len = response.length;
-                if (len > 0) {
-                    for (let i = 0; i < len; i++) {
-                        let kdkamus = response[i].kdkamus;
-                        let nama = response[i].nama;
+            $('.judul').html('Hasil Pencarian');
 
-                        $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action" onclick="detail(' + kdkamus + ')">' + nama + '</a>');
+            // parsing data obat berdasarkan pencarian
+            $.ajax({
+                url: serverLoc + 'jsonKamus/3/' + target,
+                type: 'get',
+                dataType: 'JSON',
+                success: function (response) {
+                    console.log(response);
+                    let len = response.length;
+                    if (len > 0) {
+                        for (let i = 0; i < len; i++) {
+                            let kdkamus = response[i].kdkamus;
+                            let nama = response[i].nama;
+
+                            $('.list-obat').append('<a href="#" class="list-group-item list-group-item-action" onclick="detail(' + kdkamus + ')">' + nama + '</a>');
+                        }
+                    } else {
+                        alert('Data yang Anda cari "' + target + '" tidak ditemukan');
+                        $('.btn-close').click();
                     }
-                } else {
-                    alert('Data yang Anda cari "' + target + '" tidak ditemukan');
-                    $('.btn-close').click();
                 }
-            }
-        });
-        // end parsing data obat berdasarkan pencarian
-
+            });
+            // end parsing data obat berdasarkan pencarian
+        } else {
+            alert('Isikan pencarian lebih dari 2 karakter');
+            $('#cari-all').focus();
+        }
     });
     // end pencarian
 });
