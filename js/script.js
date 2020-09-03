@@ -112,7 +112,7 @@ $(document).ready(function () {
         const target = $('#cari-all').val();
         const lenTarget = target.length;
 
-        if (target != "" || target != " " || lenTarget > 2) {
+        if (target != " " && lenTarget >= 2) {
             $('.logo').hide();
             $('.menu').hide();
             $('.daftar').show();
@@ -140,6 +140,8 @@ $(document).ready(function () {
                     }
                 }
             });
+
+            $('#cari-obat').modal('hide');
             // end parsing data obat berdasarkan pencarian
         } else {
             alert('Isikan pencarian lebih dari 2 karakter');
